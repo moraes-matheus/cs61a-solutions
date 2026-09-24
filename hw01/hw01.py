@@ -35,7 +35,7 @@ def two_of_three(i, j, k):
     >>> two_of_three(5, 5, 5)
     50
     """
-    return _____
+    return min(i, j) * min(i, j) + min(max(i, j), k) * min(max(i, j), k)
 
 
 def largest_factor(n):
