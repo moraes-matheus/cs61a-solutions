@@ -70,4 +70,9 @@ def hailstone(n):
     >>> b
     1
     """
-    "*** YOUR CODE HERE ***"
+    sum = 1
+    print(n)
+    if n <= 1:
+        return sum
+    sum += hailstone(n // 2 if n % 2 == 0 else n * 3 + 1)
+    return sum
