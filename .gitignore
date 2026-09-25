@@ -2,12 +2,19 @@
 **/.grader
 **/.vscode
 **/tests
+**/.venv
 
 *.env
 *.provenance-manifest
 *.json
 *.ini
 *.ok
+*.ok_history
+*.ok_storage
+*.python-version
 
 *conftest.py
 *ok
+
+notes.txt
+daycounter.txt
