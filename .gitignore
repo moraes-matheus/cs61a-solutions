@@ -1,0 +1,13 @@
+**/__pycache__
+**/.grader
+**/.vscode
+**/tests
+
+*.env
+*.provenance-manifest
+*.json
+*.ini
+*.ok
+
+*conftest.py
+*ok
