@@ -1,6 +1,3 @@
-"""Homework 1: Functions."""
-
-
 from operator import add, sub
 
 def a_plus_abs_b(a, b):
@@ -10,21 +7,21 @@ def a_plus_abs_b(a, b):
     5
     >>> a_plus_abs_b(2, -3)
     5
-    >>> a_plus_abs_b(-1, 4)
-    3
-    >>> a_plus_abs_b(-1, -4)
-    3
+    >>> # a check that you didn't change the return statement!
+    >>> import inspect, re
+    >>> re.findall(r'^\s*(return .*)', inspect.getsource(a_plus_abs_b), re.M)
+    ['return f(a, b)']
     """
     if b < 0:
-        f = sub
+        f = _____
     else:
-        f = add
+        f = _____
     return f(a, b)
 
 
-def two_of_three(i, j, k):
-    """Return m*m + n*n, where m and n are the two smallest members of the
-    positive numbers i, j, and k.
+def two_of_three(x, y, z):
+    """Return a*a + b*b, where a and b are the two smallest members of the
+    positive numbers x, y, and z.
 
     >>> two_of_three(1, 2, 3)
     5
@@ -34,8 +31,13 @@ def two_of_three(i, j, k):
     68
     >>> two_of_three(5, 5, 5)
     50
+    >>> # check that your code consists of nothing but an expression (this docstring)
+    >>> # a return statement
+    >>> import inspect, ast
+    >>> [type(x).__name__ for x in ast.parse(inspect.getsource(two_of_three)).body[0].body]
+    ['Expr', 'Return']
     """
-    return min(i, j) * min(i, j) + min(max(i, j), k) * min(max(i, j), k)
+    return _____
 
 
 def largest_factor(n):
@@ -45,15 +47,66 @@ def largest_factor(n):
     5
     >>> largest_factor(80) # factors are 1, 2, 4, 5, 8, 10, 16, 20, 40
     40
-    >>> largest_factor(13) # factors are 1, 13
+    >>> largest_factor(13) # factor is 1 since 13 is prime
     1
     """
-    for i in range(n - 1, 0, -1):
-        if n % i == 0:
-            return i
+    "*** YOUR CODE HERE ***"
+
+
+def if_function(condition, true_result, false_result):
+    """Return true_result if condition is a true value, and
+    false_result otherwise.
+
+    >>> if_function(True, 2, 3)
+    2
+    >>> if_function(False, 2, 3)
+    3
+    >>> if_function(3==2, 3+2, 3-2)
+    1
+    >>> if_function(3>2, 3+2, 3-2)
+    5
+    """
+    if condition:
+        return true_result
+    else:
+        return false_result
+
+
+def with_if_statement():
+    """
+    >>> result = with_if_statement()
+    47
+    >>> print(result)
+    None
+    """
+    if cond():
+        return true_func()
+    else:
+        return false_func()
+
+def with_if_function():
+    """
+    >>> result = with_if_function()
+    42
+    47
+    >>> print(result)
+    None
+    """
+    return if_function(cond(), true_func(), false_func())
+
+def cond():
+    "*** YOUR CODE HERE ***"
+
+def true_func():
+    "*** YOUR CODE HERE ***"
+
+def false_func():
+    "*** YOUR CODE HERE ***"
+
 
 def hailstone(n):
-    """Print the hailstone sequence starting at n and return its length.
+    """Print the hailstone sequence starting at n and return its
+    length.
 
     >>> a = hailstone(10)
     10
@@ -65,14 +118,6 @@ def hailstone(n):
     1
     >>> a
     7
-    >>> b = hailstone(1)
-    1
-    >>> b
-    1
     """
-    sum = 1
-    print(n)
-    if n <= 1:
-        return sum
-    sum += hailstone(n // 2 if n % 2 == 0 else n * 3 + 1)
-    return sum
+    "*** YOUR CODE HERE ***"
+
