@@ -1,20 +1,27 @@
-**/__pycache__
-**/.grader
-**/.vscode
-**/tests
+# core
 **/.venv
+**/.vscode
+**/__pycache__
 
+# pyenv
+*.python-version
+
+# fall 2026 grader
+**/.grader
+**/.pytest_cache
+**/tests
 *.env
-*.provenance-manifest
-*.json
 *.ini
+*.json
+*.provenance-manifest
+*conftest.py
+
+# fall 2020 grader
 *.ok
 *.ok_history
 *.ok_storage
-*.python-version
-
-*conftest.py
 *ok
 
-notes.txt
+# personal
 daycounter.txt
+notes.txt
