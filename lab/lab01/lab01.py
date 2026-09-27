@@ -33,6 +33,20 @@ def sum_digits(y):
     6
     """
     "*** YOUR CODE HERE ***"
+    value = y
+    num_digits = 1
+    while value > 10:
+        value = value // 10
+        num_digits += 1
+    value = y
+    sum = 0
+    while num_digits >= 0:
+        size = 10 ** num_digits
+        remainder = value // size
+        sum += remainder
+        value -= remainder * size
+        num_digits -= 1
+    return sum
 
 
 
