@@ -48,8 +48,6 @@ def sum_digits(y):
         num_digits -= 1
     return sum
 
-
-
 def double_eights(n):
     """Return true if n has two eights in a row.
     >>> double_eights(8)
@@ -66,5 +64,20 @@ def double_eights(n):
     False
     """
     "*** YOUR CODE HERE ***"
+    num_digits = 0
+    val = n
+    while val > 10:
+        num_digits += 1
+        val //= 10
 
-
+    val = n
+    islast_eight = False
+    while num_digits >= 0:
+        digit = val // (10 ** num_digits)
+        val -= digit * (10 ** num_digits)
+        num_digits -= 1
+        iseight = digit == 8
+        if iseight and islast_eight:
+            return True
+        islast_eight = iseight
+    return False
