@@ -11,8 +11,13 @@ def falling(n, k):
     1
     """
     "*** YOUR CODE HERE ***"
-
-
+    
+    result = 1
+    i = 0 
+    while i < k:
+        result *= n - i
+        i += 1
+    return result
 
 def sum_digits(y):
     """Sum all the digits of y.
