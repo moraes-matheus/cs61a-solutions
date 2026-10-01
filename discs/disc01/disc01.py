@@ -60,3 +60,24 @@ name:   value:
 x       4
 y       2
 """
+
+# 2.2
+"""
+# I have introduced this "func" label, with values [0], [1], that act as intrinsic names.
+# This way I'm able to indicate that the names are binded to the same thing, without "drawing arrows". 
+# I'm also doing the exercises properly in paper.
+
+statements:
+def double(x):
+    return x * 2
+def triple(x):
+    return x * 3
+hat = double
+double = triple
+
+[global frame]
+name:   value:      funcs:
+double  func[1]     [0] func double(x)
+triple  func[1]     [1] func triple(x)
+hat     func[0]
+"""
