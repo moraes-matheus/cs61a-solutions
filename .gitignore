@@ -22,6 +22,15 @@
 *.ok_storage
 *ok
 
+# Project Hog
+**/gui_files
+*calc.py
+*dice.py
+*hog_gui.py
+*ucb.py
+
+
+
 # personal
 daycounter.txt
 notes.txt
