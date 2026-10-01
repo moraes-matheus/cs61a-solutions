@@ -81,3 +81,30 @@ double  func[1]     [0] func double(x)
 triple  func[1]     [1] func triple(x)
 hat     func[0]
 """
+
+# 2.3
+"""
+# For this representation all frames assume all statements were already evaluated. 
+
+statements:
+def double(x):
+    return x * 2
+
+hmmm = double
+wow = double(3)
+hmmm(wow)
+
+[Global frame]
+name:   value:
+double  func double(x)
+hmmm    func double(x)
+wow     6
+
+[f1: double     parent=Global frame]
+name:   value:
+x       6
+
+[f2: hmmm       parent=Global frame]
+name:   value:
+x       12
+"""
