@@ -33,3 +33,30 @@ def is_prime(n):
             return False
         i += 1
     return True
+
+#2.1
+"""
+statement 1: x = 10 % 4
+10 % 4 evaluates to 2
+name x is bind to value 2
+[global frame]
+name:   value:
+x       2
+---------------------
+statement 2: y = x
+x evaluates to 2
+name y is bind to value 2
+[global frame]
+name:   value:
+x       2
+y       2
+---------------------
+statement 3: x **= 2
+x ** 2 evaluates to 2 ** 2
+2 ** 2 evaluates to 4
+name x is bind to value 4
+[global frame]
+name:   value:
+x       4
+y       2
+"""
