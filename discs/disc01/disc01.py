@@ -108,3 +108,42 @@ x       6
 name:   value:
 x       12
 """
+
+# 2.4
+"""
+statements:
+def f(x):
+    return x
+def g(x, y):
+    if x(y):
+        return not y
+    return y
+x = 3
+x = g(f, x)
+f = g(f, 0)
+
+[Global frame]
+name:   value:
+f       0
+g       func g(x, y)
+x       False
+
+[f1: g      parent="Global frame"]
+name:   value:
+x       func f(x)
+y       3
+Return value: False
+[f2: f      parent="Global frame"]
+name:   value:
+x       3
+Return value: 3
+[f3: g      parent="Global frame"]
+name:   value:
+x       func f(x)
+y       0
+Return value: 0
+[f4: f      parent="Global frame"]
+name:   value:
+x       0
+Return value: 0
+"""
