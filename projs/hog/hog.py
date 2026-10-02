@@ -48,7 +48,12 @@ def free_bacon(score):
 
     # Trim pi to only (score + 1) digit(s)
     # BEGIN PROBLEM 2
-    "*** YOUR CODE HERE ***"
+    "*** YOUR CODE HERE ***"    
+    # 12354 % 1000 = 354
+    # 353 // 100 = 3
+    digit = pi % (10 ** (101 - score))
+    digit = digit // (10 ** (101 - score - 1))
+    pi = digit
     # END PROBLEM 2
 
     return pi % 10 + 3
