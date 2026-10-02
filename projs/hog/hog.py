@@ -52,7 +52,7 @@ def free_bacon(score):
     # 12354 % 1000 = 354
     # 353 // 100 = 3
     digit = pi % (10 ** (101 - score))
-    digit = digit // (10 ** (101 - score - 1))
+    digit = digit // (10 ** (100 - score))
     pi = digit
     # END PROBLEM 2
 
@@ -74,7 +74,6 @@ def take_turn(num_rolls, opponent_score, dice=six_sided):
     assert opponent_score < 100, 'The game should be over.'
     # BEGIN PROBLEM 3
     "*** YOUR CODE HERE ***"
-    turn_score = 0
     if num_rolls == 0:
         return free_bacon(opponent_score)
     return roll_dice(num_rolls, dice)
@@ -131,9 +130,8 @@ def pig_pass(player_score, opponent_score):
     """
     # BEGIN PROBLEM 4b
     "*** YOUR CODE HERE ***"
-    if 0 > opponent_score - player_score < 4:
-        return True
-    return False
+
+    return player_score < opponent_score and opponent_score - player_score < 3
     # END PROBLEM 4b
 
 
@@ -173,6 +171,16 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
     who = 0  # Who is about to take a turn, 0 (first) or 1 (second)
     # BEGIN PROBLEM 5
     "*** YOUR CODE HERE ***"
+    while score0 < goal and score1 < goal:
+        extra = False
+        if who == 0:
+            score0 += take_turn(strategy0(score0, score1), score1, dice)
+            extra = extra_turn(score0, score1)
+        else:
+            score1 += take_turn(strategy1(score1, score0), score0, dice)
+            extra = extra_turn(score1, score0)
+        if not extra:
+            who = other(who)
     # END PROBLEM 5
     # (note that the indentation for the problem 6 prompt (***YOUR CODE HERE***) might be misleading)
     # BEGIN PROBLEM 6
