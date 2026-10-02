@@ -181,10 +181,14 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
             extra = extra_turn(score1, score0)
         if not extra:
             who = other(who)
+
     # END PROBLEM 5
     # (note that the indentation for the problem 6 prompt (***YOUR CODE HERE***) might be misleading)
     # BEGIN PROBLEM 6
-    "*** YOUR CODE HERE ***"
+    #"*** YOUR CODE HERE ***"
+        say = say(score0, score1)
+    #while score0 < goal and score1 < goal:
+    #say(score0, score1)
     # END PROBLEM 6
     return score0, score1
 
