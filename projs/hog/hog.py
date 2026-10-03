@@ -344,6 +344,16 @@ def max_scoring_num_rolls(dice=six_sided, trials_count=1000):
     """
     # BEGIN PROBLEM 9
     "*** YOUR CODE HERE ***"
+    max_score = 0
+    max_score_index = 1
+    k = 1
+    while k <= 10:
+        points = make_averaged(roll_dice, trials_count)(k, dice)
+        if max_score < points:
+            max_score = points
+            max_score_index = k
+        k += 1
+    return max_score_index
     # END PROBLEM 9
 
 
